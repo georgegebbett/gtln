@@ -1,0 +1,53 @@
+{
+  "compilerOptions": {
+    /* Base Options: */
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "es2022",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    /* Strictness */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "module": "Node16",
+    "noEmit": true,
+
+    "lib": ["es2022"],
+    /* LANGUAGE COMPILATION OPTIONS */
+    "moduleResolution": "nodenext",
+    "checkJs": true,
+    /* EMIT RULES */
+    "outDir": "./dist",
+    // TSUP takes care of emitting js for us, in a MUCH faster way
+    "declaration": true,
+    "declarationMap": true,
+    "removeComments": true,
+    /* TYPE CHECKING RULES */
+    // "noImplicitAny": true, // Included in "Strict"
+    // "noImplicitThis": true, // Included in "Strict"
+    // "strictBindCallApply": true, // Included in "Strict"
+    // "strictFunctionTypes": true, // Included in "Strict"
+    // "strictNullChecks": true, // Included in "Strict"
+    // "strictPropertyInitialization": true, // Included in "Strict"
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "useUnknownInCatchVariables": true,
+    // THE BELOW ARE EXTRA STRICT OPTIONS THAT SHOULD ONLY BY CONSIDERED IN VERY SAFE PROJECTS
+    // "exactOptionalPropertyTypes": true, // TLDR - Setting to undefined is not the same as a property not being defined at all
+    // "noPropertyAccessFromIndexSignature": true, // TLDR - Use dot notation for objects if youre sure it exists, use ['index'] notaion if unsure
+
+    /* OTHER OPTIONS */
+    "allowSyntheticDefaultImports": true,
+    // "emitDecoratorMetadata": true,
+    // "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "useDefineForClassFields": true,
+    "include": ["src", "tsup.config.ts", "../reset.d.ts", "prettier.config.mjs"]
+  }
+}
