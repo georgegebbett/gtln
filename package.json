@@ -1,6 +1,6 @@
 {
   "name": "gtln",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A utility to use Graphite and Linear together",
   "files": [
     "dist",
