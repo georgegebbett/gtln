@@ -86,13 +86,11 @@ const createGraphitePrWithLinearIssueDetails = async (
     })) as string | undefined
   }
 
+  const commitMessage = `${commitPrefix}: ${issue.title} - resolves ${issue.identifier}`
+
   const gtProcess = spawn(
     "gt",
-    [
-      "create",
-      options.all ? "-a" : "",
-      `--message= "${commitPrefix}: ${issue.title} - resolves ${issue.identifier}"`,
-    ],
+    ["create", ...(options.all ? ["-a"] : []), `--message=${commitMessage}`],
     {
       stdio: "inherit", // This will direct the output of the command to the current process's stdout/stderr
     },
