@@ -1,4 +1,5 @@
-import { readFile, writeFile } from "fs/promises"
+import { mkdir, readFile, writeFile } from "fs/promises"
+import * as path from "node:path"
 import { type } from "arktype"
 import * as os from "node:os"
 import { runSetup } from "../cli/setup.js"
@@ -51,8 +52,10 @@ export const setConfigKey = async <K extends keyof GtlnConfig>(
   await writeFile(CONFIG_FILE_PATH, JSON.stringify(newConfig))
 }
 
-const createConfigFile = (initialConfig: Partial<GtlnConfig>) =>
-  writeFile(CONFIG_FILE_PATH, JSON.stringify(initialConfig))
+const createConfigFile = async (initialConfig: Partial<GtlnConfig>) => {
+  await mkdir(path.dirname(CONFIG_FILE_PATH), { recursive: true })
+  await writeFile(CONFIG_FILE_PATH, JSON.stringify(initialConfig))
+}
 
 const readConfigFile = async () => {
   try {
