@@ -10,4 +10,7 @@ export default defineConfig({
   target: "esnext",
   outDir: "dist",
   onSuccess: isDev ? "node dist/index.js" : undefined,
+  banner: {
+    js: '#!/usr/bin/env node',
+  },
 })
